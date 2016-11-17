@@ -1,0 +1,86 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: times;
+}
+
+.green {
+	color: green;
+}
+
+.red {
+	color: red;
+}
+
+main {
+	width: 85%;
+	margin: 0 auto;
+	padding: 50px 0;
+	background-image: url("http://static.comicvine.com/uploads/original/11122/111227476/4727264-7245520943-could.jpg");
+
+}
+
+h1 {
+	display: inline-block;
+	vertical-align: top;
+	width: 89%;
+	color: rgb(11, 159, 173);
+}
+
+#reset {
+	width: 6em;
+	display: inline-block;
+	margin-right: 50px;
+	background: linear-gradient(red, rgb(11, 159, 173));
+}
+
+.place {
+	display: inline-block;
+	width: 22%;
+	height: 200px;
+	margin: 20px 10px;
+	border: 1px solid gray;
+	box-shadow: 3px 3px 10px rgb(11, 159, 173);
+	text-align: center;
+}
+
+.place h2, .place p {
+	margin: 30px 0;
+	color: rgb(11, 159, 173);
+}
+
+a {
+	text-align: center;
+	display: inline-block;
+	width: 5.5em;
+	height: 2em;
+	padding: 8px 0;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	background: linear-gradient(rgb(11, 159, 173), gold 25%);
+	border-radius: 15px;
+}
+
+a:hover {
+	cursor: pointer;
+	box-shadow: 1px 1px 3px red;
+}
+
+#actbox {
+	height: 400px;
+	margin: 20px 10px;
+	padding: 20px;
+	overflow-y: scroll;
+	border: 1px solid gray;
+	box-shadow: 1px 1px 5px gray;
+}
+
+#actbox p {
+	margin: 5px 0;
+}
+
+#actbox > p > span {
+	margin-left: 15px;
+}

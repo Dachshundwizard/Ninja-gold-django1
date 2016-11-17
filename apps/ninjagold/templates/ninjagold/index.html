@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="description" content="Coding Dojo Python/Django Ninja Gold Assignment">
+	{% load staticfiles %}
+	<title>Django Ninja Gold</title>
+	<link rel="stylesheet" href="{% static 'ninjagold/css/styles.css' %}" media="screen">
+</head>
+<body>
+	<main>
+		<h1>Accumulated Gold: <span id="gold">${{gold}}</span></h1>
+		<a href="/reset" id="reset">Reset Game</a>
+		<section id="places">
+			<article class="place">
+				<h2>Farm</h2>
+				<p>(earns 10-20 golds)</p>
+				<a href="/processgold/farm">Find Gold!</a>
+			</article>
+			<article class="place">
+				<h2>Cave</h2>
+				<p>(earns 5-10 golds)</p>
+				<a href="/processgold/cave">Find Gold!</a>
+			</article>
+			<article class="place">
+				<h2>House</h2>
+				<p>(earns 2-5 golds)</p>
+				<a href="/processgold/house">Find Gold!</a>
+			</article>
+			<article class="place">
+				<h2>Casino</h2>
+				<p>(earns/takes 0-50 golds)</p>
+				<a href="/processgold/casino">Fatality!</a>
+			</article>
+		</section>
+		<section id="activites">
+			<h3>Activities:</h3>
+			<div id="actbox">
+				{% if not activities %}
+					<p>You currently have no activities...</p>
+				{% else %}
+					{% for activity in activities %}
+						<p class="{{ activity.class }}">{{ activity.activity }}</p>
+					{% endfor %}
+				{% endif %}
+			</div><!-- end_of_actbox-->
+		</section>
+	</main>
+	<script type="text/javascript">
+		function goldColor(){ //makes gold black or red depending on whether or not it's pos or neg
+			var gold = document.getElementById('gold')
+			if ({{gold}} < 0) {
+				gold.className = "red";
+			} else {
+				gold.className = "";
+			}
+		}
+		goldColor();
+	</script>
+</body>
+</html>
